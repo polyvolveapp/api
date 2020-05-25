@@ -1,5 +1,5 @@
 *.jar
+!gradle-wrapper.jar
 build/
 .gradle/
-gradle/
 .idea/workspace.xml
