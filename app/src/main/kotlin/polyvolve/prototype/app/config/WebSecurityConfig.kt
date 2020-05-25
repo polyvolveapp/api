@@ -41,6 +41,7 @@ class WebSecurityConfig(val adminDetailsService: UserDetailsService) : WebSecuri
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
+
         http.cors()
                 .and()
                 .csrf().disable()
@@ -67,7 +68,7 @@ class WebSecurityConfig(val adminDetailsService: UserDetailsService) : WebSecuri
         configuration.applyPermitDefaultValues()
         configuration.allowedOrigins = JWTConstants.allowedOrigins
         configuration.allowCredentials = true
-        configuration.exposedHeaders = Arrays.asList("Authorization")
+        configuration.exposedHeaders = listOf("Authorization")
 
         /*
         configuration.allowedMethods = Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
