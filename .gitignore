@@ -1,6 +1,5 @@
 *.jar
-gradle-wrapper.properties
-gradlew
-gradlew.bat
-.gradle/
 build/
+.gradle/
+gradle/
+.idea/workspace.xml
