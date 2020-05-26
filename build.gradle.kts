@@ -13,15 +13,19 @@ buildscript {
 
 plugins {
     kotlin("jvm") version "1.3.72"
+    id("application")
     id("org.springframework.boot") version "2.1.3.RELEASE"
     id("org.jetbrains.kotlin.plugin.spring") version "1.3.72"
     id("io.spring.dependency-management") version "1.0.6.RELEASE"
     id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
-
 group = "polyvolve.prototype"
 version = "0.0.1-SNAPSHOT"
+
+application {
+    mainClassName = "polyvolve.prototype.api.PrototypeApplicationKt"
+}
 
 repositories {
     mavenCentral()
@@ -53,4 +57,9 @@ tasks.withType<KotlinCompile>().configureEach {
 
 tasks.register("stage") {
     dependsOn(shadow)
+}
+
+tasks.shadowJar {
+    archiveBaseName.set("app")
+    archiveClassifier.set("shadow")
 }
