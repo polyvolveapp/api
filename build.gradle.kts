@@ -55,11 +55,11 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
-tasks.register("stage") {
-    dependsOn(shadow)
-}
-
 tasks.shadowJar {
     archiveBaseName.set("app")
     archiveClassifier.set("shadow")
+}
+
+tasks.register("stage") {
+    dependsOn(shadow)
 }
