@@ -1,5 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 buildscript {
     repositories {
@@ -17,7 +17,6 @@ plugins {
     id("org.springframework.boot") version "2.1.3.RELEASE"
     id("org.jetbrains.kotlin.plugin.spring") version "1.3.72"
     id("io.spring.dependency-management") version "1.0.6.RELEASE"
-    id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
 group = "polyvolve.prototype"
@@ -55,11 +54,11 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
-tasks.shadowJar {
-    archiveBaseName.set("app")
+tasks.register("stage") {
+    dependsOn(tasks.getByName<BootJar>("bootJar"))
+}
+
+tasks.getByName<BootJar>("bootJar") {
     archiveClassifier.set("shadow")
 }
 
-tasks.register("stage") {
-    dependsOn(shadow)
-}

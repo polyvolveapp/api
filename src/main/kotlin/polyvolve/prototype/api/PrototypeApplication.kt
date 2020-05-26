@@ -12,5 +12,5 @@ import org.springframework.scheduling.annotation.EnableScheduling
 class PrototypeApplication
 
 fun main(args: Array<String>) {
-    runApplication<PrototypeApplication>(*args)
+    runApplication<PrototypeApplication>()
 }
