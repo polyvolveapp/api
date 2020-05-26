@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar build/libs/app-*-shadow.jar
+web: java $JAVA_OPTS --debug -jar build/libs/app-*-shadow.jar
