@@ -27,7 +27,7 @@ class MailService(private val sender: JavaMailSender,
         message.setSubject(subject)
         message.setText(text)
 
-        sender.send(message)
+        //sender.send(message)
     }
 
     fun sendReminderMessage(dataHash: DataHash, admin: Admin?, isFirstReminder: Boolean = false) {
@@ -59,6 +59,6 @@ class MailService(private val sender: JavaMailSender,
         }
 
 
-        sender.send(messagePreparator)
+        //sender.send(messagePreparator)
     }
 }
