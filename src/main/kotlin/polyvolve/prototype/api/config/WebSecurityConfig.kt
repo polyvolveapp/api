@@ -66,7 +66,7 @@ class WebSecurityConfig(val adminDetailsService: UserDetailsService) : WebSecuri
         configuration.applyPermitDefaultValues()
         configuration.allowedOrigins = JWTConstants.allowedOrigins
         configuration.allowCredentials = true
-        configuration.exposedHeaders = listOf("Authorization")
+        configuration.exposedHeaders = listOf("Authorization", "Access-Control-Allow-Origin")
 
         /*
         configuration.allowedMethods = Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
