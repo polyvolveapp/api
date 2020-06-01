@@ -19,6 +19,7 @@ import polyvolve.prototype.api.services.AdminDetailsService
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
+import java.util.*
 
 
 // https://auth0.com/blog/implementing-jwt-authentication-on-spring-boot/
@@ -39,7 +40,6 @@ class WebSecurityConfig(val adminDetailsService: UserDetailsService) : WebSecuri
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
-
         http.cors()
                 .and()
                 .csrf().disable()
@@ -68,10 +68,6 @@ class WebSecurityConfig(val adminDetailsService: UserDetailsService) : WebSecuri
         configuration.allowCredentials = true
         configuration.exposedHeaders = listOf("Authorization", "Access-Control-Allow-Origin")
 
-        /*
-        configuration.allowedMethods = Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
-        configuration.allowedHeaders = Arrays.asList("Authorization")
-        */
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", configuration)
         return source
