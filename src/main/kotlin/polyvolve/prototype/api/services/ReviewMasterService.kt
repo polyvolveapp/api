@@ -1,6 +1,7 @@
 package polyvolve.prototype.api.services
 
 import org.springframework.stereotype.Service
+import polyvolve.prototype.api.data.models.DataHash
 import polyvolve.prototype.api.data.models.admin.Admin
 import polyvolve.prototype.api.data.models.review.master.IntervalType
 import polyvolve.prototype.api.data.models.review.master.ReviewMaster
@@ -85,6 +86,15 @@ class ReviewMasterService(private var dataHashService: DataHashService,
     fun getAllReviewMasters(): Iterable<ReviewMaster> = reviewMasterRepository.findAll()
     fun getReviewMaster(reviewMasterId: UUID): ReviewMaster? = reviewMasterRepository.findById(reviewMasterId).orElse(null)
 
+    fun getOrCreateDataHash(reviewMaster: ReviewMaster, user: User): DataHash {
+        var dataHash = dataHashRepository.findByMasterAndUser(reviewMaster, user)
+        if (dataHash == null) {
+            dataHash = dataHashService.createDataHash(reviewMaster, user)
+        }
+
+        return dataHash
+    }
+
     fun triggerReminder(reviewMaster: ReviewMaster, byAdmin: Admin? = null, targetUser: User? = null) {
         //val userReviewMap = HashMap<User, Review>()
 
@@ -109,7 +119,7 @@ class ReviewMasterService(private var dataHashService: DataHashService,
 
         val isFirstReminder = reviewMaster.lastReminder == null
 
-        // Might be resource intensive due to unnecessary blocking IO.
+        // Might be resource intensive due to unnecessary blocking IO. Not sure if this is transactional.
         for (user in notDoneByUsers) {
             var dataHash = dataHashes[user.id]
             if (dataHash == null) {

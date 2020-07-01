@@ -18,12 +18,12 @@ import javax.validation.constraints.NotNull
 
 @RestController
 @RequestMapping("/datahash")
-class DataHashController(val dataHashService: DataHashService,
-                         val reviewService: ReviewService,
-                         val userService: UserService,
-                         val reviewRepository: ReviewRepository,
-                         val reviewUserRepository: ReviewUserRepository,
-                         val reviewSchemaService: ReviewSchemaService,
+class DataHashController(private val dataHashService: DataHashService,
+                         private val reviewService: ReviewService,
+                         private val userService: UserService,
+                         private val reviewRepository: ReviewRepository,
+                         private val reviewUserRepository: ReviewUserRepository,
+                         private val reviewSchemaService: ReviewSchemaService,
                          var validator: SpringValidatorAdapter) {
     @GetMapping("/get/{dataHashId}")
     fun getDataHash(@PathVariable dataHashId: UUID): OkResponseEntity {

@@ -20,29 +20,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="polyvolve" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="polyvolve" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="polyvolve" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="polyvolve" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -66,7 +44,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
@@ -217,68 +198,47 @@
     <state width="1876" height="293" key="GridCell.Tab.0.bottom" timestamp="1590539962981">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583188479006" />
-    <state width="1876" height="315" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="293" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962981" />
     <state width="1876" height="293" key="GridCell.Tab.0.center" timestamp="1590539962981">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583188479006" />
-    <state width="1876" height="315" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="293" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962981" />
     <state width="1876" height="293" key="GridCell.Tab.0.left" timestamp="1590539962981">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583188479006" />
-    <state width="1876" height="315" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="293" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962981" />
     <state width="1876" height="293" key="GridCell.Tab.0.right" timestamp="1590539962981">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583188479006" />
-    <state width="1876" height="315" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="293" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962981" />
     <state width="1876" height="314" key="GridCell.Tab.1.bottom" timestamp="1590539962979">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583094406727" />
-    <state width="1876" height="315" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459789" />
     <state width="1876" height="314" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962979" />
     <state width="1876" height="314" key="GridCell.Tab.1.center" timestamp="1590539962979">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583094406727" />
-    <state width="1876" height="315" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="314" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962979" />
     <state width="1876" height="314" key="GridCell.Tab.1.left" timestamp="1590539962979">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583094406727" />
-    <state width="1876" height="315" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459788" />
     <state width="1876" height="314" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962979" />
     <state width="1876" height="314" key="GridCell.Tab.1.right" timestamp="1590539962979">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="314" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583094406727" />
-    <state width="1876" height="315" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1582407459789" />
     <state width="1876" height="314" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590539962979" />
-    <state x="469" y="198" width="982" height="702" key="SettingsEditor" timestamp="1590440366930">
+    <state x="710" y="132" width="1026" height="817" key="SettingsEditor" timestamp="1593635310939">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="710" y="132" width="1026" height="817" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1593635310939" />
     <state x="469" y="198" width="982" height="702" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590440366930" />
     <state x="100" y="116" width="1720" height="864" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590525805858">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="100" y="116" width="1720" height="864" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590525805858" />
-    <state x="655" y="176" width="621" height="756" key="find.popup" timestamp="1583094154802">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="655" y="176" width="621" height="756" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583094154802" />
     <state x="623" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1590440352366">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="251" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1583096889477" />
-    <state x="623" y="251" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1581977823078" />
     <state x="623" y="251" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1590440352366" />
   </component>
 </project>

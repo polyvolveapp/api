@@ -98,6 +98,19 @@ class ReviewMasterController(val reviewMasterService: ReviewMasterService,
         return defaultOkResponse(GetReviewMasterResponse(reviewMaster, reviewMaster.schema, reviewMaster.reviewedUsers, reviewMaster.teams, reviewMaster.reviews))
     }
 
+    @GetMapping("/link/{reviewMasterId}/{userId}")
+    fun getLinkForUser(@PathVariable reviewMasterId: UUID, @PathVariable userId: UUID, @AuthenticationPrincipal principal: Principal?): OkResponseEntity {
+        adminService.retrieveAdminAndThrow(principal)
+
+        val reviewMaster = reviewMasterService.getReviewMaster(reviewMasterId)
+                ?: throw IllegalArgumentException("ReviewMaster with id $reviewMasterId doesn't exist")
+
+        val user = userService.get(userId) ?: throw IllegalArgumentException("Unable to find user with userId $userId")
+
+        val dataHash = reviewMasterService.getOrCreateDataHash(reviewMaster, user)
+        return defaultOkResponse(dataHash)
+    }
+
     @PostMapping("/triggerreminder", consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun triggerReminder(@RequestBody body: TriggerReminderForm, @AuthenticationPrincipal principal: Principal?): OkResponseEntity {
         val admin = adminService.retrieveAdminAndThrow(principal)
@@ -124,16 +137,21 @@ class ReviewMasterController(val reviewMasterService: ReviewMasterService,
     class CreateReviewMasterForm {
         @field:NotEmpty
         var topic = ""
+
         @field:NotNull
         var periodStart: Date? = null
+
         @field:NotNull
         var periodEnd: Date? = null
+
         @field:NotNull
         var dueAt: Date? = null
+
         @field:NotNull
         var interval: Long? = null
         var intervalType: IntervalType? = null
         var recursFirstOn: Date? = null
+
         @field:NotNull
         var schemaId: UUID? = null
 
