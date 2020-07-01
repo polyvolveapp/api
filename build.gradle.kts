@@ -21,7 +21,7 @@ plugins {
 
 group = "polyvolve.prototype"
 version = "0.0.1-SNAPSHOT"
-
+""
 application {
     mainClassName = "polyvolve.prototype.api.PrototypeApplicationKt"
 }

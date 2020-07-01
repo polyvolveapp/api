@@ -6,10 +6,10 @@ import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
 import org.springframework.validation.beanvalidation.SpringValidatorAdapter
 import org.springframework.web.bind.annotation.*
-import polyvolve.prototype.api.data.models.user.Sex
 import polyvolve.prototype.api.data.models.recentlyviewed.RecentlyViewedType
 import polyvolve.prototype.api.data.models.review.master.ReviewMaster
 import polyvolve.prototype.api.data.models.team.Team
+import polyvolve.prototype.api.data.models.user.Sex
 import polyvolve.prototype.api.data.models.user.User
 import polyvolve.prototype.api.services.*
 import polyvolve.prototype.api.util.OkResponseEntity
@@ -49,8 +49,9 @@ class UserController(val userService: UserService,
                 body.description,
                 body.position,
                 body.teamIds)
+        val reviewingMasters = user.teams.flatMap { team -> team.reviewMasters }
 
-        return defaultOkResponse(GetUserResponse(user, user.teams, user.reviewMasters))
+        return defaultOkResponse(GetUserResponse(user, user.teams, user.reviewMasters, reviewingMasters))
     }
 
     @PostMapping("/delete", consumes = [MediaType.APPLICATION_JSON_VALUE])
@@ -71,7 +72,9 @@ class UserController(val userService: UserService,
                 .find { item -> item.targetId == userId && item.type == RecentlyViewedType.USER } != null
         if (!itemIsAlreadyIncluded) recentlyViewedService.createFrom(user, Date(), admin)
 
-        return defaultOkResponse(GetUserResponse(user, user.teams, user.reviewMasters))
+        val reviewingMasters = user.teams.flatMap { team -> team.reviewMasters }
+
+        return defaultOkResponse(GetUserResponse(user, user.teams, user.reviewMasters, reviewingMasters))
     }
 
     @GetMapping("/all")
@@ -137,12 +140,16 @@ class UserController(val userService: UserService,
     class CreateUserForm {
         @field:NotEmpty
         var mail = ""
+
         @field:NotEmpty
         var name = ""
+
         @field:NotEmpty
         var surname = ""
+
         @field:NotEmpty
         var position = ""
+
         @field:NotNull
         var sex: Sex? = null
     }
@@ -160,5 +167,8 @@ class UserController(val userService: UserService,
 
     class DeleteUserForm(@field:NotNull var id: String?)
 
-    class GetUserResponse(val user: User, val teams: Set<Team>, val reviewMasters: Set<ReviewMaster>)
+    class GetUserResponse(val user: User,
+                          val teams: Collection<Team>,
+                          val reviewMasters: Collection<ReviewMaster>,
+                          val reviewingMasters: Collection<ReviewMaster>)
 }
